@@ -1,0 +1,1 @@
+drop database db_Mens_Football_Leagues_Club_Management_System;

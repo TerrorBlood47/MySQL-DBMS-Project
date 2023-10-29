@@ -1,0 +1,2 @@
+to store - 
+mysqldump -u root -p db_Mens_Football_Leagues_Club_Management_System > dump.sql
