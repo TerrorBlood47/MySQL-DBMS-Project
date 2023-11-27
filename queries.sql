@@ -34,24 +34,25 @@ select club_name, match_played, wins, losses, draws, goals_for, goals_against , 
 from premier_league 
 order by points desc, goal_diff asc;
 */
+
 /*
 3. Retrieve Officials Working for a Club and Their Role*/
 /*
 select c.club_name, o.official_name, o.role_in_club
 from tbl_club as c
-join tbl_works_for as w on c.club_id = w.club_id
-join tbl_club_officials as o on w.official_id = o.official_id;
+join  tbl_works_for as w on c.club_id = w.club_id
+join tbl_club_officials as o on w.official_id = o.official_id
+where c.club_name = 'Liverpool FC';
 */
 /*
-4. number of goals by pernalties in a 2018 season
+4. number of goals by penalties in a 2018 season
 */
 /*
 select count(distinct concat(match_id,player_id,min) ) as pernalties_count
 from tbl_match_events
-where match_id in (select distinct match_id from fixture where season = '2018')
-and type_of_events like "%Penalty%";
+where match_id in (select distinct match_id from tbl_fixture where season = '2018')
+and type_of_events like "%Penalty%" and type_of_events not like "%miss%";
 */
-
 
 /*
 5. number of red cards from every club in 2018
@@ -70,9 +71,9 @@ red_clubs as (
     where c.player_id = r.player_id
     group by c.club_id
 )
-select club_name, total_red_cnt
+select club_name, COALESCE(total_red_cnt, 0) as total_red_cnt
 from tbl_club as c
-join 
+left outer join 
 red_clubs as r
 on c.club_id = r.club_id;
 */
@@ -87,15 +88,34 @@ with premier_league as(
         and r.club_id = c.club_id
     
 ),
-revered_anked_premier_league as(
+revered_ranked_premier_league as(
     select club_name, match_played, wins, losses, draws, goals_for, goals_against, goal_diff, points
     from premier_league 
     order by points asc, goal_diff desc
 )
 select * from
-revered_anked_premier_league
+revered_ranked_premier_league
+order by points asc
 limit 2; 
 */
+
+/*7. top 2 Scorers */
+
+with candidates as (
+    select player_id , count( player_id) as goals
+    from tbl_match_events
+    where type_of_events like "%Goal%" and match_id in (select distinct match_id from tbl_fixture
+                                                            where season = '2018')
+    group by player_id
+    order by goals desc
+)
+select player_name , goals
+from tbl_players  p
+right outer join 
+candidates c 
+on p.player_id = c.player_id
+limit 2;
+
 
 
 

@@ -38,6 +38,7 @@ create table tbl_plays_in_league
     CONSTRAINT fk_plays_in_ref_club FOREIGN KEY(club_id) REFERENCES tbl_club(club_id)
 );
 
+
 create table tbl_club_officials
 (
     official_id INT,
@@ -69,6 +70,7 @@ create table tbl_players
     player_id INT,
     player_name VARCHAR(200),
     date_of_birth DATE,
+    age INT,
     fav_position VARCHAR(200),
     nationality VARCHAR(200),
     weekly_wage INT,
@@ -95,11 +97,11 @@ create table tbl_plays_for
     player_id INT,
     club_id INT,
     jersey_no INT,
-    start_date DATE NOT NULL,
+    start_date DATE,
     end_date DATE,
     prev_club_id INT,
 
-    CONSTRAINT pk_plays_for PRIMARY KEY(player_id,club_id,jersey_no,start_date),
+    CONSTRAINT pk_plays_for PRIMARY KEY(player_id,club_id,start_date),
     CONSTRAINT fk_plays_for_ref_players FOREIGN KEY(player_id) REFERENCES tbl_players(player_id),
     CONSTRAINT fk_plays_for_ref_club FOREIGN KEY(club_id) REFERENCES tbl_club(club_id)
 );
@@ -147,8 +149,12 @@ create table tbl_match
     CONSTRAINT fk_match_ref_home_club FOREIGN KEY(home_team) REFERENCES tbl_club(club_id),
     CONSTRAINT fk_match_ref_away_club FOREIGN KEY(away_team) REFERENCES tbl_club(club_id),
     CONSTRAINT chk_match_status CHECK (match_status IN ('finished', 'disrupted', 'upcoming')),
-   CONSTRAINT unique_match_date_time UNIQUE (match_date, match_time)
+    CONSTRAINT unique_match_date_time UNIQUE (match_date, match_time)
+    
 );
+
+
+
 
 create table tbl_match_events
 (
@@ -164,7 +170,7 @@ create table tbl_match_events
 );
 
 
-create table fixture
+create table tbl_fixture
 (
     league_id INT,
     season YEAR,
@@ -193,7 +199,7 @@ create table tbl_officiates
     match_id INT,
     role_in_match ENUM('Referee', 'Assistant Referee', 'Linesman', 'VAR'),
 
-    CONSTRAINT pk_offciates PRIMARY KEY(referee_id,match_id),
+    CONSTRAINT pk_offciates PRIMARY KEY(referee_id,match_id, role_in_match),
     CONSTRAINT fk_officiates_ref_referee FOREIGN KEY(referee_id) REFERENCES tbl_referee(referee_id),
     CONSTRAINT fk_officiates_ref_match FOREIGN KEY(match_id) REFERENCES tbl_match(match_id),
     CONSTRAINT chk_role_referee_officiates CHECK(role_in_match in ('Referee', 'Assistant Referee', 'Linesman', 'VAR'))

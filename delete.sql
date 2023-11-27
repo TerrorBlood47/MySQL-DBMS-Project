@@ -6,7 +6,9 @@ DELETE FROM tbl_ranking;
 DELETE FROM tbl_officiates;
 
 
-DELETE FROM fixture;
+DELETE FROM tbl_fixture;
+
+DELETE FROM tbl_match_events;
 
 
 DELETE FROM tbl_match;

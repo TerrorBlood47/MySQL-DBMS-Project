@@ -1,6 +1,6 @@
 use db_Mens_Football_Leagues_Club_Management_System;
 
-/*
+
 
 -- Insert data for Liverpool 2018 squad officials with manual official_id values
 INSERT INTO tbl_club_officials (official_id, official_name, role_in_club, nationality, salary, release_clause)
@@ -46,9 +46,9 @@ VALUES
     (24, 'Javi Garcia', 'Goalkeeping Coach', 'Spanish', 300000, 7000000),
     (25, 'Pedro Marques', 'Fitness Coach', 'Portuguese', 200000, 6000000);
 
-*/
 
-/*
+
+
 -- Insert data into tbl_club
 INSERT INTO tbl_club (club_id, club_name, country, city, net_worth)
 VALUES
@@ -56,9 +56,9 @@ VALUES
     (2, 'Manchester City', 'England', 'Manchester', 1500000000),
     (3, 'Manchester United', 'England', 'Manchester', 1200000000),
     (4, 'Arsenal', 'England', 'London', 900000000);
-*/
 
-/*
+
+
 -- Insert data for the tbl_league table
 INSERT INTO tbl_league (league_id, season, league_name, country, prize_money, division)
 VALUES
@@ -67,13 +67,10 @@ VALUES
     (2, 2018, 'La Liga', 'Spain', 90000000, 'Division 1'),
     (3, 2018, 'Serie A', 'Italy', 80000000, 'Division 1'),
     (4, 2018, 'Bundesliga', 'Germany', 85000000, 'Division 1');
-*/
-/*
-INSERT INTO tbl_league (league_id, season, league_name, country, prize_money, division)
-VALUES
-    (1, 2019, 'Premier League', 'England', 100000000, 'Division 1');
-*/
-/*
+
+
+
+
 -- Insert data for the tbl_plays_in_league table for a single league
 INSERT INTO tbl_plays_in_league (league_id, club_id, season)
 VALUES
@@ -82,10 +79,10 @@ VALUES
     (1, 3, 2018),
     (1, 4, 2018);
     
-*/
 
 
-/*
+
+
 -- Insert data for club officials working for Liverpool FC
 INSERT INTO tbl_works_for (club_id, official_id, start_date, end_date)
 VALUES
@@ -126,10 +123,10 @@ VALUES
     (4, 23, '2018-01-01', '2019-12-31'),
     (4, 24, '2018-01-01', '2019-12-31'),
     (4, 25, '2018-01-01', '2019-12-31');
-*/
 
 
-/*
+
+
 -- Liverpool 2018 Squad Players
 INSERT INTO tbl_players (player_id, player_name, date_of_birth, fav_position, nationality, weekly_wage, release_clause)
 VALUES
@@ -148,9 +145,9 @@ VALUES
     (13, 'Dejan Lovren', '1989-07-05', 'Defender', 'Croatian', 130000, 190000000),
     (14, 'Divock Origi', '1995-04-18', 'Forward', 'Belgian', 120000, 180000000),
     (15, 'Xherdan Shaqiri', '1991-10-10', 'Midfielder', 'Swiss', 140000, 200000000);
-*/
 
-/*
+
+
 -- Manchester City 2018 Squad Players
 INSERT INTO tbl_players (player_id, player_name, date_of_birth, fav_position, nationality, weekly_wage, release_clause)
 VALUES
@@ -169,9 +166,9 @@ VALUES
     (28, 'Gabriel Jesus', '1997-04-03', 'Forward', 'Brazilian', 130000, 170000000),
     (29, 'Vincent Kompany', '1986-04-10', 'Defender', 'Belgian', 100000, 130000000),
     (30, 'Ilkay Gündogan', '1990-10-24', 'Midfielder', 'German', 140000, 180000000);
-*/
 
-/*
+
+
 
 -- Manchester United 2018 Squad Players
 INSERT INTO tbl_players (player_id, player_name, date_of_birth, fav_position, nationality, weekly_wage, release_clause)
@@ -192,10 +189,10 @@ VALUES
     (44, 'Phil Jones', '1992-02-21', 'Defender', 'English', 100000, 130000000),
     (45, 'Andreas Pereira', '1996-01-01', 'Midfielder', 'Brazilian', 120000, 160000000);
 
-*/
 
 
-/*
+
+
 -- Arsenal 2018 Squad Players
 INSERT INTO tbl_players (player_id, player_name, date_of_birth, fav_position, nationality, weekly_wage, release_clause)
 VALUES
@@ -214,96 +211,95 @@ VALUES
     (58, 'Emiliano Martinez', '1992-09-02', 'Goalkeeper', 'Argentine', 100000, 160000000),
     (59, 'Alex Iwobi', '1996-05-03', 'Midfielder', 'Nigerian', 110000, 170000000),
     (60, 'Danny Welbeck', '1990-11-26', 'Forward', 'English', 120000, 180000000);
-*/
 
 
-/*
+
 -- Liverpool 2018 Squad Players Playing for Liverpool
 INSERT INTO tbl_plays_for (player_id, club_id, jersey_no, start_date, end_date, prev_club_id)
 VALUES
-    (1, 1, 10, '2018-01-01', '2023-06-30', NULL),
+    (1, 1, 10, '2018-01-01', '2023-06-30', 4),
     (2, 1, 7, '2018-01-01', '2024-06-30', NULL),
     (3, 1, 1, '2018-01-01', '2022-06-30', NULL),
     (4, 1, 11, '2018-01-01', '2025-06-30', NULL),
-    (5, 1, 9, '2018-01-01', '2023-06-30', NULL),
-    (6, 1, 14, '2018-01-01', '2024-06-30', NULL),
+    (5, 1, 9, '2018-01-01', '2023-06-30', 4),
+    (6, 1, 14, '2018-01-01', '2024-06-30', 2),
     (7, 1, 26, '2018-01-01', '2022-06-30', NULL),
     (8, 1, 3, '2018-01-01', '2023-06-30', NULL),
-    (9, 1, 4, '2018-01-01', '2022-06-30', NULL),
+    (9, 1, 4, '2018-01-01', '2022-06-30', 2),
     (10, 1, 6, '2018-01-01', '2024-06-30', NULL),
-    (11, 1, 12, '2018-01-01', '2024-06-30', NULL),
+    (11, 1, 12, '2018-01-01', '2024-06-30', 4),
     (12, 1, 2, '2018-01-01', '2025-06-30', NULL),
-    (13, 1, 22, '2018-01-01', '2023-06-30', NULL),
+    (13, 1, 22, '2018-01-01', '2023-06-30', 4),
     (14, 1, 18, '2018-01-01', '2023-06-30', NULL),
-    (15, 1, 20, '2018-01-01', '2024-06-30', NULL);
-*/
+    (15, 1, 20, '2018-01-01', '2024-06-30', 4);
 
-/*
+
+
 -- Manchester City 2018 Squad Players Playing for Manchester City
 INSERT INTO tbl_plays_for (player_id, club_id, jersey_no, start_date, end_date, prev_club_id)
 VALUES
-    (16, 2, 10, '2018-01-01', '2023-06-30', NULL),
+    (16, 2, 10, '2018-01-01', '2023-06-30', 1),
     (17, 2, 17, '2018-01-01', '2024-06-30', NULL),
-    (18, 2, 19, '2018-01-01', '2022-06-30', NULL),
+    (18, 2, 19, '2018-01-01', '2022-06-30', 1),
     (19, 2, 7, '2018-01-01', '2025-06-30', NULL),
-    (20, 2, 21, '2018-01-01', '2023-06-30', NULL),
-    (21, 2, 20, '2018-01-01', '2024-06-30', NULL),
+    (20, 2, 21, '2018-01-01', '2023-06-30', 4),
+    (21, 2, 20, '2018-01-01', '2024-06-30',4),
     (22, 2, 2, '2018-01-01', '2022-06-30', NULL),
     (23, 2, 25, '2018-01-01', '2023-06-30', NULL),
     (24, 2, 5, '2018-01-01', '2022-06-30', NULL),
     (25, 2, 24, '2018-01-01', '2024-06-30', NULL),
     (26, 2, 31, '2018-01-01', '2025-06-30', NULL),
-    (27, 2, 8, '2018-01-01', '2023-06-30', NULL),
+    (27, 2, 8, '2018-01-01', '2023-06-30', 1),
     (28, 2, 33, '2018-01-01', '2023-06-30', NULL),
-    (29, 2, 30, '2018-01-01', '2024-06-30', NULL),
+    (29, 2, 30, '2018-01-01', '2024-06-30', 4),
     (30, 2, 4, '2018-01-01', '2022-06-30', NULL);
-*/
 
-/*
+
+
 -- Manchester United 2018 Squad Players Playing for Manchester United
 INSERT INTO tbl_plays_for (player_id, club_id, jersey_no, start_date, end_date, prev_club_id)
 VALUES
     (31, 3, 9, '2018-01-01', '2024-06-30', NULL),
     (32, 3, 6, '2018-01-01', '2024-06-30', NULL),
-    (33, 3, 1, '2018-01-01', '2024-06-30', NULL),
+    (33, 3, 1, '2018-01-01', '2024-06-30', 4),
     (34, 3, 11, '2018-01-01', '2023-06-30', NULL),
-    (35, 3, 10, '2018-01-01', '2023-06-30', NULL),
+    (35, 3, 10, '2018-01-01', '2023-06-30', 4),
     (36, 3, 31, '2018-01-01', '2022-06-30', NULL),
     (37, 3, 8, '2018-01-01', '2023-06-30', NULL),
     (38, 3, 21, '2018-01-01', '2022-06-30', NULL),
     (39, 3, 12, '2018-01-01', '2022-06-30', NULL),
-    (40, 3, 2, '2018-01-01', '2024-06-30', NULL),
+    (40, 3, 2, '2018-01-01', '2024-06-30', 2),
     (41, 3, 23, '2018-01-01', '2022-06-30', NULL),
-    (42, 3, 18, '2018-01-01', '2024-06-30', NULL),
+    (42, 3, 18, '2018-01-01', '2024-06-30', 1),
     (43, 3, 14, '2018-01-01', '2022-06-30', NULL),
-    (44, 3, 4, '2018-01-01', '2024-06-30', NULL),
+    (44, 3, 4, '2018-01-01', '2024-06-30', 4),
     (45, 3, 7, '2018-01-01', '2023-06-30', NULL);
-*/
 
-/*
+
+
 -- Arsenal 2018 Squad Players Playing for Arsenal
 INSERT INTO tbl_plays_for (player_id, club_id, jersey_no, start_date, end_date, prev_club_id)
 VALUES
     (46, 4, 14, '2018-01-01', '2023-06-30', NULL),
     (47, 4, 17, '2018-01-01', '2023-06-30', NULL),
-    (48, 4, 10, '2018-01-01', '2024-06-30', NULL),
+    (48, 4, 10, '2018-01-01', '2024-06-30', 2),
     (49, 4, 7, '2018-01-01', '2023-06-30', NULL),
-    (50, 4, 8, '2018-01-01', '2024-06-30', NULL),
+    (50, 4, 8, '2018-01-01', '2024-06-30', 1),
     (51, 4, 19, '2018-01-01', '2023-06-30', NULL),
     (52, 4, 12, '2018-01-01', '2022-06-30', NULL),
     (53, 4, 5, '2018-01-01', '2024-06-30', NULL),
     (54, 4, 11, '2018-01-01', '2024-06-30', NULL),
-    (55, 4, 18, '2018-01-01', '2023-06-30', NULL),
+    (55, 4, 18, '2018-01-01', '2023-06-30', 2),
     (56, 4, 16, '2018-01-01', '2023-06-30', NULL),
-    (57, 4, 15, '2018-01-01', '2023-06-30', NULL),
+    (57, 4, 15, '2018-01-01', '2023-06-30', 3),
     (58, 4, 22, '2018-01-01', '2023-06-30', NULL),
     (59, 4, 9, '2018-01-01', '2024-06-30', NULL),
-    (60, 4, 21, '2018-01-01', '2024-06-30', NULL);
-*/
+    (60, 4, 21, '2018-01-01', '2024-06-30',3);
 
 
 
-/*
+
+
 -- Insert data for Liverpool's stadium
 INSERT INTO tbl_own_stadium (club_id, stadium_id, stadium_name, location, built_date, capacity)
 VALUES (1, 1, 'Anfield', 'Liverpool, England', '1884-01-01', 54074);
@@ -319,10 +315,10 @@ VALUES (3, 1, 'Old Trafford', 'Manchester, England', '1910-02-19', 74326);
 -- Insert data for Arsenal's stadium
 INSERT INTO tbl_own_stadium (club_id, stadium_id, stadium_name, location, built_date, capacity)
 VALUES (4, 1, 'Emirates Stadium', 'London, England', '2006-07-22', 60260);
-*/
 
 
-/*
+
+
 -- Insert data for referees
 INSERT INTO tbl_referee (referee_id, refreee_name, nationality)
 VALUES
@@ -336,10 +332,10 @@ VALUES
     (8, 'Andre Marriner', 'English'),
     (9, 'Stuart Attwell', 'English'),
     (10, 'Lee Mason', 'English');
-*/
 
 
-/*
+
+
 -- Insert data for matches between the clubs in 2018
 -- Assume club_id 1 is Liverpool, club_id 2 is Manchester City, club_id 3 is Manchester United, and club_id 4 is Arsenal
 
@@ -357,9 +353,9 @@ VALUES
     (10, '2018-10-30', '14:45:00', 4, 1, 60000, 60, 1, 3, 'finished'),
     (11, '2018-11-25', '16:00:00', 3, 1, 54000, 56, 0, 2, 'finished'),
     (12, '2018-12-12', '15:00:00', 2, 4, 52000, 55, 2, 1, 'finished');
-*/
 
-/*
+
+
 -- Insert upcoming matches
 INSERT INTO tbl_match (match_id, match_date, match_time, home_team, away_team, spectators, ticket_price, match_status)
 VALUES
@@ -369,11 +365,11 @@ VALUES
     (16, '2019-02-20', '16:30:00', 4, 2, NULL, NULL, 'upcoming'),
     (17, '2019-02-17', '14:00:00', 1, 4, NULL, NULL, 'upcoming'),
     (18, '2019-04-20', '16:30:00', 2, 3, NULL, NULL, 'upcoming');
-*/
 
-/*
+
+
 -- Populate the fixture table with data for all 18 matches
-INSERT INTO fixture (league_id, season, match_id)
+INSERT INTO tbl_fixture (league_id, season, match_id)
 VALUES
     (1, 2018, 1),
     (1, 2018, 2),
@@ -393,9 +389,9 @@ VALUES
     (1, 2018, 16),
     (1, 2019, 17),
     (1, 2019, 18);
-*/
 
-/*
+
+
 -- Populate the tbl_employs table with data
 INSERT INTO tbl_employs (league_id, season, referee_id)
 VALUES
@@ -408,9 +404,9 @@ VALUES
     (1, 2019, 3), 
     (1, 2019, 4); 
 
-*/
 
-/*
+
+
 -- Populate the tbl_officiates table with data
 INSERT INTO tbl_officiates (referee_id, match_id, role_in_match)
 VALUES
@@ -418,45 +414,43 @@ VALUES
     (2, 2, 'Referee'), -- Referee 2 officiates Match 2 as a Referee
     (3, 3, 'Referee'), -- Referee 3 officiates Match 3 as a Referee
     (4, 4, 'Referee'), -- Referee 4 officiates Match 4 as a Referee
-    (1, 5, 'Assistant Referee'), -- Referee 1 officiates Match 5 as an Assistant Referee
-    (2, 6, 'Assistant Referee'), -- Referee 2 officiates Match 6 as an Assistant Referee
-    (3, 7, 'Assistant Referee'), -- Referee 3 officiates Match 7 as an Assistant Referee
-    (4, 8, 'Assistant Referee'), -- Referee 4 officiates Match 8 as an Assistant Referee
-    (1, 9, 'Linesman'), -- Referee 1 officiates Match 9 as a Linesman
-    (2, 10, 'Linesman'), -- Referee 2 officiates Match 10 as a Linesman
-    (3, 11, 'Linesman'), -- Referee 3 officiates Match 11 as a Linesman
-    (4, 12, 'Linesman'), -- Referee 4 officiates Match 12 as a Linesman
-    (1, 13, 'VAR'), -- Referee 1 officiates Match 13 as a VAR (Video Assistant Referee)
-    (2, 14, 'VAR'), -- Referee 2 officiates Match 14 as a VAR (Video Assistant Referee)
-    (3, 15, 'VAR'), -- Referee 3 officiates Match 15 as a VAR (Video Assistant Referee)
-    (4, 16, 'VAR'); -- Referee 4 officiates Match 16 as a VAR (Video Assistant Referee)
-
-*/
+    (1, 1, 'Assistant Referee'), -- Referee 1 officiates Match 5 as an Assistant Referee
+    (2, 2, 'Assistant Referee'), -- Referee 2 officiates Match 6 as an Assistant Referee
+    (3, 3, 'Assistant Referee'), -- Referee 3 officiates Match 7 as an Assistant Referee
+    (4, 4, 'Assistant Referee'), -- Referee 4 officiates Match 8 as an Assistant Referee
+    (1, 1, 'Linesman'), -- Referee 1 officiates Match 9 as a Linesman
+    (2, 2, 'Linesman'), -- Referee 2 officiates Match 10 as a Linesman
+    (3, 3, 'Linesman'), -- Referee 3 officiates Match 11 as a Linesman
+    (4, 4, 'Linesman'), -- Referee 4 officiates Match 12 as a Linesman
+    (1, 1, 'VAR'), -- Referee 1 officiates Match 13 as a VAR (Video Assistant Referee)
+    (2, 2, 'VAR'), -- Referee 2 officiates Match 14 as a VAR (Video Assistant Referee)
+    (3, 3, 'VAR'), -- Referee 3 officiates Match 15 as a VAR (Video Assistant Referee)
+    (4, 4, 'VAR'); -- Referee 4 officiates Match 16 as a VAR (Video Assistant Referee)
 
 
-/*
+
 -- Insert data into tbl_ranking for the 2018 season
 -- Assuming a league with ID 1 and four clubs with IDs 1, 2, 3, and 4
 
 -- Club 1
 INSERT INTO tbl_ranking (ranking_id, league_id, season, club_id, match_played, wins, losses, draws, goals_for, goals_against)
-VALUES (1, 1, 2018, 1, 38, 30, 4, 4, 90, 31);
+VALUES (1, 1, 2018, 1, 6, 4, 0, 2, 12, 3);
 
 -- Club 2
 INSERT INTO tbl_ranking (ranking_id, league_id, season, club_id, match_played, wins, losses, draws, goals_for, goals_against)
-VALUES (2, 1, 2018, 2, 38, 32, 3, 3, 95, 26);
+VALUES (2, 1, 2018, 2, 6, 3, 1, 2, 10, 5);
 
 -- Club 3
 INSERT INTO tbl_ranking (ranking_id, league_id, season, club_id, match_played, wins, losses, draws, goals_for, goals_against)
-VALUES (3, 1, 2018, 3, 38, 25, 6, 7, 80, 42);
+VALUES (3, 1, 2018, 3, 6, 2, 0, 4, 5, 12);
 
 -- Club 4
 INSERT INTO tbl_ranking (ranking_id, league_id, season, club_id, match_played, wins, losses, draws, goals_for, goals_against)
-VALUES (4, 1, 2018, 4, 38, 22, 10, 6, 70, 45);
+VALUES (4, 1, 2018, 4, 6, 2, 2, 2, 7, 4);
 
-*/
 
-/*
+
+
 -- Insert match events for Match 1
 INSERT INTO tbl_match_events (match_id, player_id, type_of_events, min)
 VALUES
@@ -465,8 +459,11 @@ VALUES
     (1, 18, 'Goal', 72),   -- Leroy Sané scores
     (1, 20, 'Assist', 8),  -- David Silva with an assist
     (1, 10, 'Assist', 24); -- Naby Keïta with an assist
-*/
-/*
+
+
+
+
+
 -- Insert match events for Match 1
 INSERT INTO tbl_match_events (match_id, player_id, type_of_events, min)
 VALUES
@@ -476,7 +473,8 @@ VALUES
     (1, 12, 'Goal', 85),    -- Joel Matip scores
     (1, 27, 'Yellow Card', 28), -- Yellow card for Fernandinho
     (1, 2, 'Red Card', 75),    -- Red card for Sergio Agüero
-    (1, 11, 'Penalty Goal', 40), -- Penalty goal by Roberto Firmino
+    (1, 11, 'Penalty Goal', 40),-- Penalty goal by Roberto Firmino
+    (1, 1, 'Goal', 80), 
     (1, 3, 'Penalty Goal', 70);  -- Penalty goal by Sadio Mané
 
 -- Insert match events for Match 2
@@ -525,4 +523,4 @@ VALUES
     (5, 38, 'Assist', 10),  -- Ander Herrera with an assist
     (5, 33, 'Assist', 32);  -- David De Gea with an assist
 
-*/
+
