@@ -47,7 +47,7 @@ END $$
 DELIMITER ;
 
 
-/*all setPlayer('Luis Diaz','1996-07-07','Forward','Columbia',190000,19000000 );*/
+/*call setPlayer('Luis Diaz','1996-07-07','Forward','Columbia',190000,19000000 );*/
 
 
 

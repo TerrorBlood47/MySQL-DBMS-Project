@@ -100,7 +100,7 @@ limit 2;
 */
 
 /*7. top 2 Scorers */
-
+/*
 with candidates as (
     select player_id , count( player_id) as goals
     from tbl_match_events
@@ -115,7 +115,7 @@ right outer join
 candidates c 
 on p.player_id = c.player_id
 limit 2;
-
+*/
 
 
 
